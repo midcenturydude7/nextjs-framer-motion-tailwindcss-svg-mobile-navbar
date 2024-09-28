@@ -1,3 +1,4 @@
+import Wrapper from "./components/Wrapper/Wrapper";
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/rgm1dlw.css" />
       </head>
       <body className="bg-slate-900 font-[sofia-pro,_sans-serif] font-medium not-italic text-slate-100/70 antialiased">
-        {children}
+        <Wrapper>{children}</Wrapper>
       </body>
     </html>
   );
