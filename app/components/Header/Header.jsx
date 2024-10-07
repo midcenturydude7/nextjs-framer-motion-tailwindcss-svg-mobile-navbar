@@ -1,3 +1,3 @@
 export default function Header() {
-  return <header className="p-8">Header</header>;
+  return <header className="py-8 border-b-[1px] border-slate-300/20">Header</header>;
 }
