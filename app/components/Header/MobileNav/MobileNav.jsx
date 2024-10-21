@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion, useCycle, AnimatePresence, MotionConfig } from "framer-motion";
+import { menuSlide } from "../../../lib/anim";
 
 export default function MobileNav() {
   const [mobileNavbar, toggleMobileNavbar] = useCycle(false, true);
