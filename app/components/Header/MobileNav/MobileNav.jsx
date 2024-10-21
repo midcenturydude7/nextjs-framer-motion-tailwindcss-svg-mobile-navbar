@@ -38,85 +38,108 @@ export default function MobileNav() {
       </div>
       <AnimatePresence>
         {mobileNavbar && (
-          <motion.div
-            key="mobile-navbar"
-            variants={{
-              open: { x: "0%", transition: { when: "beforeChildren" } },
-              closed: { x: "-100%" },
+          <MotionConfig
+            transition={{
+              type: "spring",
+              bounce: 0.099,
             }}
-            initial="closed"
-            animate="open"
-            exit="closed"
-            className="container fixed inset-0 mx-auto flex flex-col items-center justify-center space-y-10 bg-slate-100/80 p-6"
           >
             <motion.div
+              key="mobile-navbar"
               variants={{
                 open: {
-                  y: "0%",
-                  opacity: 1,
+                  x: "0%",
+                  transition: {
+                    when: "beforeChildren",
+                    type: "spring",
+                    bounce: 0.099,
+                  },
+                  type: "spring",
+                  bounce: 0.099,
                 },
                 closed: {
-                  y: "25%",
-                  opacity: 0,
+                  x: "100%",
+                  transition: {
+                    when: "afterChildren",
+                    type: "spring",
+                    bounce: 0.099,
+                  },
                 },
               }}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              className="container fixed inset-0 mx-auto flex flex-col items-center justify-center space-y-10 bg-slate-100/80 p-6"
             >
-              <ul className="space-y-5">
-                <li>
-                  <a href="#" className="text-4xl font-bold">
-                    Link #1
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-4xl font-bold">
-                    Link #2
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-4xl font-bold">
-                    Link #3
-                  </a>
-                </li>
-              </ul>
+              <motion.div
+                variants={{
+                  open: {
+                    y: "0%",
+                    opacity: 1,
+                  },
+                  closed: {
+                    y: "25%",
+                    opacity: 0,
+                  },
+                }}
+              >
+                <ul className="space-y-5">
+                  <li>
+                    <a href="#" className="text-4xl font-bold">
+                      Link #1
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-4xl font-bold">
+                      Link #2
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-4xl font-bold">
+                      Link #3
+                    </a>
+                  </li>
+                </ul>
+              </motion.div>
+              <motion.div
+                variants={{
+                  open: {
+                    y: "0%",
+                    opacity: 1,
+                  },
+                  closed: {
+                    y: "25%",
+                    opacity: 0,
+                  },
+                }}
+                className="h-px w-full bg-slate-500/10"
+              />
+              <motion.div
+                variants={{
+                  open: {
+                    y: "0%",
+                    opacity: 1,
+                  },
+                  closed: {
+                    y: "25%",
+                    opacity: 0,
+                  },
+                }}
+              >
+                <ul className="flex items-center justify-center space-x-8">
+                  <li>
+                    <div className="h-10 w-10 rounded-lg bg-slate-400/80" />
+                  </li>
+                  <li>
+                    <div className="h-10 w-10 rounded-lg bg-slate-400/80" />
+                  </li>
+                  <li>
+                    <div className="h-10 w-10 rounded-lg bg-slate-400/80" />
+                  </li>
+                </ul>
+              </motion.div>
             </motion.div>
-            <motion.div
-              variants={{
-                open: {
-                  y: "0%",
-                  opacity: 1,
-                },
-                closed: {
-                  y: "25%",
-                  opacity: 0,
-                },
-              }}
-              className="h-px w-full bg-slate-500/10"
-            />
-            <motion.div
-              variants={{
-                open: {
-                  y: "0%",
-                  opacity: 1,
-                },
-                closed: {
-                  y: "25%",
-                  opacity: 0,
-                },
-              }}
-            >
-              <ul className="flex items-center justify-center space-x-8">
-                <li>
-                  <div className="h-10 w-10 rounded-lg bg-slate-400/80" />
-                </li>
-                <li>
-                  <div className="h-10 w-10 rounded-lg bg-slate-400/80" />
-                </li>
-                <li>
-                  <div className="h-10 w-10 rounded-lg bg-slate-400/80" />
-                </li>
-              </ul>
-            </motion.div>
-          </motion.div>
+          </MotionConfig>
         )}
       </AnimatePresence>
     </nav>
