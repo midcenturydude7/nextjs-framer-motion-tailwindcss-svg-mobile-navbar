@@ -5,7 +5,7 @@ export const menuSlide = {
     transition: {
       duration: 0.8,
       ease: [0.76, 0, 0.24, 1],
-      when: "afterChildren",
+      // when: "afterChildren",
     },
   },
   exit: {
@@ -13,7 +13,7 @@ export const menuSlide = {
     transition: {
       duration: 0.8,
       ease: [0.76, 0, 0.24, 1],
-      when: "beforeChildren",
+      // when: "beforeChildren",
     },
   },
 };

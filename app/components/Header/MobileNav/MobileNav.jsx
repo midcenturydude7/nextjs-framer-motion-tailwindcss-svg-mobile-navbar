@@ -52,7 +52,7 @@ export default function MobileNav() {
               initial="initial"
               animate="enter"
               exit="exit"
-              className="fixed inset-0 flex flex-col items-center justify-center space-y-10 bg-slate-100/80 p-6"
+              className="fixed inset-0 flex h-full flex-col items-center justify-center space-y-10 bg-slate-100/80 p-6"
             >
               <motion.div
                 variants={{
