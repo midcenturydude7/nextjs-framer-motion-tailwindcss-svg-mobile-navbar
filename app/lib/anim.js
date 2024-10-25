@@ -5,15 +5,15 @@ export const menuSlide = {
     transition: {
       duration: 0.8,
       ease: [0.76, 0, 0.24, 1],
-      when: "beforeChildren",
+      when: "afterChildren",
     },
   },
   exit: {
-    x: "calc(100% = 100px)",
+    x: "calc(100% + 100px)",
     transition: {
       duration: 0.8,
       ease: [0.76, 0, 0.24, 1],
-      when: "afterChildren",
+      when: "beforeChildren",
     },
   },
 };

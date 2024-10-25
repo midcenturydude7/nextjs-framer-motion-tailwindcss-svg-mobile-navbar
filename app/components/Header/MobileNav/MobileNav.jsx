@@ -2,6 +2,7 @@
 import React from "react";
 import { motion, useCycle, AnimatePresence, MotionConfig } from "framer-motion";
 import { menuSlide } from "../../../lib/anim";
+import Curve from "./Curve/Curve";
 
 export default function MobileNav() {
   const [mobileNavbar, toggleMobileNavbar] = useCycle(false, true);
@@ -37,7 +38,7 @@ export default function MobileNav() {
           />
         </motion.button>
       </div>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {mobileNavbar && (
           <MotionConfig
             transition={{
@@ -47,30 +48,11 @@ export default function MobileNav() {
           >
             <motion.div
               key="mobile-navbar"
-              variants={{
-                open: {
-                  x: "0%",
-                  transition: {
-                    when: "beforeChildren",
-                    type: "spring",
-                    bounce: 0.099,
-                  },
-                  type: "spring",
-                  bounce: 0.099,
-                },
-                closed: {
-                  x: "100%",
-                  transition: {
-                    when: "afterChildren",
-                    type: "spring",
-                    bounce: 0.099,
-                  },
-                },
-              }}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="container fixed inset-0 mx-auto flex flex-col items-center justify-center space-y-10 bg-slate-100/80 p-6"
+              variants={menuSlide}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+              className="fixed inset-0 flex flex-col items-center justify-center space-y-10 bg-slate-100/80 p-6"
             >
               <motion.div
                 variants={{
@@ -139,6 +121,7 @@ export default function MobileNav() {
                   </li>
                 </ul>
               </motion.div>
+              <Curve />
             </motion.div>
           </MotionConfig>
         )}
