@@ -56,12 +56,11 @@ export default function MobileNav() {
             >
               <motion.div
                 variants={slide}
-                animate="animate"
                 initial="initial"
-                enter="enter"
+                animate="enter"
                 exit="exit"
               >
-                <ul className="space-y-5">
+                <motion.ul className="space-y-5">
                   <li>
                     <a href="#" className="text-4xl font-bold">
                       Link #1
@@ -77,7 +76,7 @@ export default function MobileNav() {
                       Link #3
                     </a>
                   </li>
-                </ul>
+                </motion.ul>
               </motion.div>
               <motion.div
                 variants={{
