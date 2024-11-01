@@ -52,7 +52,7 @@ export default function MobileNav() {
               initial="initial"
               animate="enter"
               exit="exit"
-              className="fixed inset-0 flex h-full flex-col items-center justify-center space-y-10 bg-slate-100/80 p-6"
+              className="fixed inset-0 flex h-full flex-col items-center justify-center space-y-10 bg-slate-100 p-6"
             >
               <motion.div
                 variants={slide}
@@ -60,21 +60,15 @@ export default function MobileNav() {
                 animate="enter"
                 exit="exit"
               >
-                <motion.ul className="space-y-5">
+                <motion.ul className="space-y-5 text-4xl text-slate-400/80">
                   <li>
-                    <a href="#" className="text-4xl font-bold">
-                      Link #1
-                    </a>
+                    <a href="#">Link #1</a>
                   </li>
                   <li>
-                    <a href="#" className="text-4xl font-bold">
-                      Link #2
-                    </a>
+                    <a href="#">Link #2</a>
                   </li>
                   <li>
-                    <a href="#" className="text-4xl font-bold">
-                      Link #3
-                    </a>
+                    <a href="#">Link #3</a>
                   </li>
                 </motion.ul>
               </motion.div>
@@ -89,7 +83,7 @@ export default function MobileNav() {
                     opacity: 0,
                   },
                 }}
-                className="h-px w-full bg-slate-500/10"
+                className="h-px w-full bg-slate-500/20"
               />
               <motion.div
                 variants={{
