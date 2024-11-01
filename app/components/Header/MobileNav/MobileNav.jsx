@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion, useCycle, AnimatePresence, MotionConfig } from "framer-motion";
-import { menuSlide } from "../../../lib/anim";
+import { menuSlide, slide } from "../../../lib/anim";
 import Curve from "./Curve/Curve";
 
 export default function MobileNav() {
@@ -55,16 +55,11 @@ export default function MobileNav() {
               className="fixed inset-0 flex h-full flex-col items-center justify-center space-y-10 bg-slate-100/80 p-6"
             >
               <motion.div
-                variants={{
-                  open: {
-                    y: "0%",
-                    opacity: 1,
-                  },
-                  closed: {
-                    y: "25%",
-                    opacity: 0,
-                  },
-                }}
+                variants={slide}
+                animate="animate"
+                initial="initial"
+                enter="enter"
+                exit="exit"
               >
                 <ul className="space-y-5">
                   <li>
