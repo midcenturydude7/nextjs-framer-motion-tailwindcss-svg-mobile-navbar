@@ -54,13 +54,14 @@ export default function MobileNav() {
               exit="exit"
               className="fixed inset-0 flex h-full flex-col items-center justify-center space-y-10 bg-slate-100 p-6"
             >
-              <motion.div
-                variants={slide}
-                initial="initial"
-                animate="enter"
-                exit="exit"
-              >
-                <motion.ul className="space-y-5 text-4xl text-slate-400/80">
+              <div>
+                <motion.ul
+                  variants={slide}
+                  initial="initial"
+                  animate="enter"
+                  exit="exit"
+                  className="space-y-5 text-4xl text-slate-400/80"
+                >
                   <li>
                     <a href="#">Link #1</a>
                   </li>
@@ -71,33 +72,22 @@ export default function MobileNav() {
                     <a href="#">Link #3</a>
                   </li>
                 </motion.ul>
-              </motion.div>
+              </div>
               <motion.div
-                variants={{
-                  open: {
-                    y: "0%",
-                    opacity: 1,
-                  },
-                  closed: {
-                    y: "25%",
-                    opacity: 0,
-                  },
-                }}
+                variants={slide}
+                initial="initial"
+                animate="enter"
+                exit="exit"
                 className="h-px w-full bg-slate-500/20"
               />
-              <motion.div
-                variants={{
-                  open: {
-                    y: "0%",
-                    opacity: 1,
-                  },
-                  closed: {
-                    y: "25%",
-                    opacity: 0,
-                  },
-                }}
-              >
-                <ul className="flex items-center justify-center space-x-8">
+              <div>
+                <motion.ul
+                  variants={slide}
+                  initial="initial"
+                  animate="enter"
+                  exit="exit"
+                  className="flex items-center justify-center space-x-8"
+                >
                   <li>
                     <div className="h-10 w-10 rounded-lg bg-slate-400/80" />
                   </li>
@@ -107,8 +97,8 @@ export default function MobileNav() {
                   <li>
                     <div className="h-10 w-10 rounded-lg bg-slate-400/80" />
                   </li>
-                </ul>
-              </motion.div>
+                </motion.ul>
+              </div>
               <Curve />
             </motion.div>
           </MotionConfig>
