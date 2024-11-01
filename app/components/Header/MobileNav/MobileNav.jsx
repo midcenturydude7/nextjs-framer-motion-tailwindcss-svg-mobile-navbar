@@ -75,16 +75,16 @@ export default function MobileNav() {
               </div>
               <motion.div className="h-px w-full bg-slate-500/20" />
               <motion.div
-              // variants={slide}
-              // initial="initial"
-              // animate="enter"
-              // exit="exit"
+                variants={slide}
+                initial="initial"
+                animate="enter"
+                exit="exit"
               >
                 <motion.ul
-                  // variants={slide}
-                  // initial="initial"
-                  // animate="enter"
-                  // exit="exit"
+                  variants={slide}
+                  initial="initial"
+                  animate="enter"
+                  exit="exit"
                   className="flex items-center justify-center space-x-8"
                 >
                   <li>
