@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { mobileNavItems } from "../../../lib/mobileNavItems";
 import { menuSlide, slide } from "../../../lib/anim";
 import Curve from "./Curve/Curve";
 
@@ -51,27 +53,25 @@ export default function MobileNav() {
             exit="exit"
             className="fixed inset-0 flex h-full flex-col items-center justify-center space-y-10 bg-slate-100 p-6"
           >
-            <div>
-              <motion.ul
-                variants={slide}
-                initial="initial"
-                animate="enter"
-                exit="exit"
-                className="space-y-5 text-4xl text-slate-400/80"
-              >
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">About</a>
-                </li>
-                <li>
-                  <a href="#">Resources</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
-                </li>
-              </motion.ul>
+            <div className="flex flex-col space-y-3">
+              {mobileNavItems.map(({ id, path, label }) => {
+                const isActive = path === pathname;
+                return (
+                  <Link key={id} href={path}>
+                    <motion.button
+                      data-active={isActive}
+                      onClick={() => setSelectMobileTab(path)}
+                      variants={slide}
+                      initial="initial"
+                      animate="enter"
+                      exit="exit"
+                      className="text-4xl text-slate-400/80"
+                    >
+                      {label}
+                    </motion.button>
+                  </Link>
+                );
+              })}
             </div>
             <motion.div className="h-px w-full bg-slate-500/20" />
             <motion.div
