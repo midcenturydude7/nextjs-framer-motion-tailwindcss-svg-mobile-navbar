@@ -60,7 +60,7 @@ export default function MobileNav() {
                   <Link key={id} href={path}>
                     <motion.button
                       data-active={isActive}
-                      onClick={() => setSelectMobileTab(path)}
+                      onClick={() => toggleMobileNavbar(path)}
                       variants={slide}
                       initial="initial"
                       animate="enter"
