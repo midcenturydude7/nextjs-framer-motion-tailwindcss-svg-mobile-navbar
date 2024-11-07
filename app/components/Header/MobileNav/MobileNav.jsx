@@ -43,7 +43,7 @@ export default function MobileNav() {
           />
         </motion.button>
       </div>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         {mobileNavbar && (
           <motion.div
             key="mobile-navbar"
@@ -60,9 +60,11 @@ export default function MobileNav() {
                   <Link key={id} href={path}>
                     <motion.button
                       data-active={isActive}
-                      onClick={() => toggleMobileNavbar(path)}
+                      onClick={() =>
+                        toggleMobileNavbar(setSelectMobileTab(path))
+                      }
                       variants={slide}
-                      initial="initial"
+                      initial={"initial"}
                       animate="enter"
                       exit="exit"
                       className="text-4xl text-slate-400/80"
