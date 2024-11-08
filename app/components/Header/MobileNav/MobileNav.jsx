@@ -10,7 +10,7 @@ import Curve from "./Curve/Curve";
 export default function MobileNav() {
   const pathname = usePathname();
   const [mobileNavbar, toggleMobileNavbar] = useCycle(false, true);
-  const [selectMobileTab, setSelectMobileTab] = React.useState(pathname);
+  // const [selectMobileTab, setSelectMobileTab] = React.useState(pathname);
 
   return (
     <nav className="px-8">
@@ -43,7 +43,7 @@ export default function MobileNav() {
           />
         </motion.button>
       </div>
-      <AnimatePresence mode="sync">
+      <AnimatePresence mode="wait">
         {mobileNavbar && (
           <motion.div
             key="mobile-navbar"
@@ -51,18 +51,16 @@ export default function MobileNav() {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="fixed inset-0 flex h-full flex-col items-center justify-center space-y-10 bg-slate-100 p-6"
+            className="fixed inset-0 flex h-full flex-col items-center justify-center gap-10 bg-slate-100"
           >
-            <div className="flex flex-col space-y-3">
+            <motion.div className="flex flex-col space-y-3">
               {mobileNavItems.map(({ id, path, label }) => {
                 const isActive = path === pathname;
                 return (
                   <Link key={id} href={path}>
                     <motion.button
                       data-active={isActive}
-                      onClick={() =>
-                        toggleMobileNavbar(setSelectMobileTab(path))
-                      }
+                      onClick={() => toggleMobileNavbar(path)}
                       variants={slide}
                       initial={"initial"}
                       animate="enter"
@@ -74,7 +72,7 @@ export default function MobileNav() {
                   </Link>
                 );
               })}
-            </div>
+            </motion.div>
             <motion.div className="h-px w-full bg-slate-500/20" />
             <motion.div
               variants={slide}
